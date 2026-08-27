@@ -9,7 +9,7 @@ export default function Home() {
           </span>
           <a
             href="#contact"
-            className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
+            className="bg-[#1fd655] hover:bg-[#18ab45] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
           >
             Get a Quote
           </a>
@@ -28,7 +28,7 @@ export default function Home() {
           <div className="pt-4">
             <a
               href="#contact"
-              className="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block"
+              className="bg-[#1fd655] hover:bg-[#18ab45] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block"
             >
               Request a Free Estimate
             </a>
