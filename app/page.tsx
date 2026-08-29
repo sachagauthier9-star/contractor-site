@@ -66,35 +66,37 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-bold mb-3">Kitchen Renovations</h3>
-              <p className="text-slate-600">
-                Full kitchen remodels including custom cabinetry, countertops, and modern layouts.
-              </p>
-            </div>
+<div className="grid md:grid-cols-3 gap-8">
 
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-bold mb-3">Bathroom Upgrades</h3>
-              <p className="text-slate-600">
-                Custom tile work, modern vanity installations, and complete bathroom overhauls.
-              </p>
-            </div>
+  <a href="/services/kitchens" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+    <h3 className="text-xl font-bold mb-3">Kitchen Renovations</h3>
+    <p className="text-slate-600">
+      Full kitchen remodels including custom cabinetry, countertops, and modern layouts.
+    </p>
+  </a>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-bold mb-3">Basements & Additions</h3>
-              <p className="text-slate-600">
-                Transform unused spaces into finished living quarters, suites, or structural additions.
-              </p>
-            </div>
+  <a href="/services/bathrooms" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+    <h3 className="text-xl font-bold mb-3">Bathroom Upgrades</h3>
+    <p className="text-slate-600">
+      Custom tile work, modern vanity installations, and complete bathroom overhauls.
+    </p>
+  </a>
 
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-              <h3 className="text-xl font-bold mb-3">Home Gyms & Personal Spaces</h3>
-              <p className="text-slate-600">
-                Build dream home gyms and personalized retreats tailored to your needs.
-              </p>
-            </div>
-          </div>
+  <a href="/services/basements" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+    <h3 className="text-xl font-bold mb-3">Basements & Additions</h3>
+    <p className="text-slate-600">
+      Transform unused spaces into finished living quarters, suites, or structural additions.
+    </p>
+  </a>
+
+  <a href="/services/gyms" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
+    <h3 className="text-xl font-bold mb-3">Home Gyms & Personal Spaces</h3>
+    <p className="text-slate-600">
+      Build dream home gyms and personalized retreats tailored to your needs.
+    </p>
+  </a>
+
+</div>
         </section>
 
         {/* Why Choose Us */}
