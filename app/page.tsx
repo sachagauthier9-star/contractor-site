@@ -94,10 +94,10 @@ export default function Home() {
               Ready to start your project?
             </h2>
 
-            <div className="w-full overflow-hidden rounded-lg h-[350px]">
+            <div className="w-full overflow-hidden rounded-lg h-[430px] sm:h-[460px]">
               <iframe
                 src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAYk3gvJUQzBYQk8xREdOSU1OQlU2NTlJSFRZSVhaMC4u&embed=true"
-                className="w-full h-[620px] -mb-[140px] border-none"
+                className="w-full h-[650px] sm:h-[680px] border-none"
               />
             </div>
           </div>
