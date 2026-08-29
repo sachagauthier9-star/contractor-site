@@ -1,13 +1,33 @@
+export const metadata = {
+  title: "White Pine Construction Ottawa",
+  description:
+    "Professional renovations in Ottawa including kitchens, bathrooms, basements, home gyms, and custom builds.",
+  icons: {
+    icon: "/1logo.png", // favicon now uses your logo
+  },
+};
+
 export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-        {/* Navigation */}
-        <header className="sticky top-0 z-50 bg-slate-900 text-white border-b border-slate-800">
+
+        {/* Full-Width Branded Header Bar */}
+        <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span className="text-xl font-bold tracking-tight">
-              White Pine Construction Ottawa
-            </span>
+
+            {/* Logo + Brand Name */}
+            <div className="flex items-center gap-3">
+              <img
+                src="/1logo.png"
+                alt="White Pine Construction Ottawa Logo"
+                className="h-12 w-auto"
+              />
+              <span className="text-xl font-bold tracking-tight">
+                White Pine Construction Ottawa
+              </span>
+            </div>
+
             <a
               href="#contact"
               className="bg-[#1fd655] hover:bg-[#18ab45] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
