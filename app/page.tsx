@@ -17,11 +17,16 @@ export default function Home() {
       <img
         src="/1logo.png"
         alt="White Pine Construction Ottawa Logo"
-        className="h-8 sm:h-12 w-auto shrink-0"
+        className="h-10 sm:h-12 w-auto shrink-0"
       />
-      <span className="text-sm sm:text-xl font-bold tracking-tight truncate sm:whitespace-normal">
-        White Pine Construction Ottawa
-      </span>
+      <div className="flex flex-col leading-tight">
+        <span className="text-sm sm:text-xl font-bold tracking-tight">
+          White Pine
+        </span>
+        <span className="text-xs sm:text-lg font-semibold text-slate-700">
+          Construction Ottawa
+        </span>
+      </div>
     </div>
 
     {/* Header Contact Dropdown Button */}
@@ -59,7 +64,6 @@ export default function Home() {
     </div>
   </div>
 </header>
-
         {/* Hero Section */}
         <section className="bg-slate-900 text-white py-24 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-6">
