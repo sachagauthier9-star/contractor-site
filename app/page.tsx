@@ -1,9 +1,12 @@
-export const metadata = {
+import type { Metadata } from "next";
+import ContactForm from "./components/ContactForm";
+
+export const metadata: Metadata = {
   title: "White Pine Construction Ottawa",
   description:
     "Professional renovations in Ottawa including kitchens, bathrooms, basements, home gyms, and custom builds.",
   icons: {
-    icon: "/1logo.png", // favicon now uses your logo
+    icon: "/1logo.png",
   },
 };
 
@@ -11,11 +14,9 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-
         {/* Full-Width Branded Header Bar */}
         <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
           <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-
             {/* Logo + Brand Name */}
             <div className="flex items-center gap-3">
               <img
@@ -30,7 +31,7 @@ export default function Home() {
 
             <a
               href="#contact"
-              className="bg-[#1fd655] hover:bg-[#18ab45] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
+              className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
             >
               Get a Quote
             </a>
@@ -49,7 +50,7 @@ export default function Home() {
             <div className="pt-4">
               <a
                 href="#contact"
-                className="bg-[#1fd655] hover:bg-[#18ab45] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block"
+                className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block"
               >
                 Request a Free Estimate
               </a>
@@ -66,37 +67,47 @@ export default function Home() {
             </p>
           </div>
 
-<div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <a
+              href="/services/kitchens"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3">Kitchen Renovations</h3>
+              <p className="text-slate-600">
+                Full kitchen remodels including custom cabinetry, countertops, and modern layouts.
+              </p>
+            </a>
 
-  <a href="/services/kitchens" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
-    <h3 className="text-xl font-bold mb-3">Kitchen Renovations</h3>
-    <p className="text-slate-600">
-      Full kitchen remodels including custom cabinetry, countertops, and modern layouts.
-    </p>
-  </a>
+            <a
+              href="/services/bathrooms"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3">Bathroom Upgrades</h3>
+              <p className="text-slate-600">
+                Custom tile work, modern vanity installations, and complete bathroom overhauls.
+              </p>
+            </a>
 
-  <a href="/services/bathrooms" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
-    <h3 className="text-xl font-bold mb-3">Bathroom Upgrades</h3>
-    <p className="text-slate-600">
-      Custom tile work, modern vanity installations, and complete bathroom overhauls.
-    </p>
-  </a>
+            <a
+              href="/services/basements"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3">Basements & Additions</h3>
+              <p className="text-slate-600">
+                Transform unused spaces into finished living quarters, suites, or structural additions.
+              </p>
+            </a>
 
-  <a href="/services/basements" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
-    <h3 className="text-xl font-bold mb-3">Basements & Additions</h3>
-    <p className="text-slate-600">
-      Transform unused spaces into finished living quarters, suites, or structural additions.
-    </p>
-  </a>
-
-  <a href="/services/gyms" className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition">
-    <h3 className="text-xl font-bold mb-3">Home Gyms & Personal Spaces</h3>
-    <p className="text-slate-600">
-      Build dream home gyms and personalized retreats tailored to your needs.
-    </p>
-  </a>
-
-</div>
+            <a
+              href="/services/gyms"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3">Home Gyms & Personal Spaces</h3>
+              <p className="text-slate-600">
+                Build dream home gyms and personalized retreats tailored to your needs.
+              </p>
+            </a>
+          </div>
         </section>
 
         {/* Why Choose Us */}
@@ -111,26 +122,24 @@ export default function Home() {
 
         {/* Contact Section */}
         <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
-          <div className="bg-white p-8 rounded-2xl shadow-md border border-slate-200">
-            <h2 className="text-2xl font-bold mb-6 text-center">
+          <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
+            <h2 className="text-3xl font-bold text-center mb-2">
               Ready to start your project?
             </h2>
 
-            <div className="w-full overflow-hidden rounded-lg h-[430px] sm:h-[460px]">
-              <iframe
-                src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAAYk3gvJUQzBYQk8xREdOSU1OQlU2NTlJSFRZSVhaMC4u&embed=true"
-                className="w-full h-[650px] sm:h-[680px] border-none"
-              />
-            </div>
+            <p className="text-center text-slate-600 mb-8">
+              Request a free estimate and we'll get back to you shortly.
+            </p>
+
+            <ContactForm />
           </div>
         </section>
       </main>
 
       {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-8 px-6 text-center text-sm">
+      <footer className="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
         <p>
-          &copy; {new Date().getFullYear()} White Pine Construction Ottawa Inc.
-          All rights reserved.
+          &copy; {new Date().getFullYear()} White Pine Construction Ottawa Inc. All rights reserved.
         </p>
       </footer>
     </>
