@@ -1,22 +1,17 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import ContactForm from "./components/ContactForm";
 
-export const metadata: Metadata = {
-  title: "White Pine Construction Ottawa",
-  description:
-    "Professional renovations in Ottawa including kitchens, bathrooms, basements, home gyms, and custom builds.",
-  icons: {
-    icon: "/1logo.png",
-  },
-};
-
 export default function Home() {
+  const [showContact, setShowContact] = useState(false);
+
   return (
     <>
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         {/* Full-Width Branded Header Bar */}
         <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative">
             {/* Logo + Brand Name */}
             <div className="flex items-center gap-3">
               <img
@@ -29,12 +24,47 @@ export default function Home() {
               </span>
             </div>
 
-            <a
-              href="#contact"
-              className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
-            >
-              Get a Quote
-            </a>
+            {/* Header Action Buttons */}
+            <div className="relative flex items-center gap-3">
+              {/* Dropdown Toggle Button */}
+              <button
+                onClick={() => setShowContact(!showContact)}
+                className="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2"
+              >
+                <span>📞 Contact Us</span>
+                <span className="text-xs">{showContact ? "▲" : "▼"}</span>
+              </button>
+
+              <a
+                href="#contact"
+                className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
+              >
+                Get a Quote
+              </a>
+
+              {/* Dropdown Menu */}
+              {showContact && (
+                <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
+                  <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
+                    Direct Contact
+                  </span>
+                  
+                  <a
+                    href="tel:+16130000000"
+                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
+                  >
+                    <span>📞</span> (613) 000-0000
+                  </a>
+
+                  <a
+                    href="mailto:info@whitepineconstruction.ca"
+                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
+                  >
+                    <span>✉️</span> info@whitepineconstruction.ca
+                  </a>
+                </div>
+              )}
+            </div>
           </div>
         </header>
 
