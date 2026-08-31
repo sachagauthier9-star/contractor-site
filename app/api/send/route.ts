@@ -1,15 +1,14 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const body = await request.json();
     const { name, email, phone, projectType, details } = body;
 
     const data = await resend.emails.send({
-      from: 'White Pine Construction <onboarding@resend.dev>', // Replace with your verified domain email once configured
+      from: 'White Pine Construction <onboarding@resend.dev>',
       to: ['sacha@whitepineconstruction.ca'],
       subject: `New Estimate Request: ${projectType}`,
       html: `
