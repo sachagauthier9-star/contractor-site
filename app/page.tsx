@@ -110,6 +110,7 @@ export default function Home() {
               </p>
             </a>
 
+            {/* TEMPORARILY HIDDEN: Basements & Additions
             <a
               href="/services/basements"
               className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
@@ -119,7 +120,9 @@ export default function Home() {
                 Transform unused spaces into finished living quarters, suites, or structural additions.
               </p>
             </a>
+            */}
 
+            {/* TEMPORARILY HIDDEN: Home Gyms & Personal Spaces
             <a
               href="/services/gyms"
               className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
@@ -129,6 +132,7 @@ export default function Home() {
                 Build dream home gyms and personalized retreats tailored to your needs.
               </p>
             </a>
+            */}
 
             <a
               href="/services/accent-walls"
