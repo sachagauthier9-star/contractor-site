@@ -202,17 +202,10 @@ export default function Home() {
               Request a free estimate and we'll get back to you shortly.
             </p>
 
-            <ContactForm />
+<ContactForm />
           </div>
         </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-8 px-4 text-center text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} White Pine Construction Ottawa Inc. All rights reserved.
-        </p>
-      </footer>
     </>
   );
 }
