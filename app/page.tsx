@@ -24,23 +24,15 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Header Action Buttons */}
-            <div className="relative flex items-center gap-3">
-              {/* Dropdown Toggle Button */}
+            {/* Header Contact Dropdown Button */}
+            <div className="relative">
               <button
                 onClick={() => setShowContact(!showContact)}
-                className="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2"
+                className="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2 whitespace-nowrap"
               >
                 <span>📞 Contact Us</span>
                 <span className="text-xs">{showContact ? "▲" : "▼"}</span>
               </button>
-
-              <a
-                href="#contact"
-                className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-semibold px-4 py-2 rounded-lg transition"
-              >
-                Get a Quote
-              </a>
 
               {/* Dropdown Menu */}
               {showContact && (
@@ -135,6 +127,16 @@ export default function Home() {
               <h3 className="text-xl font-bold mb-3">Home Gyms & Personal Spaces</h3>
               <p className="text-slate-600">
                 Build dream home gyms and personalized retreats tailored to your needs.
+              </p>
+            </a>
+
+            <a
+              href="/services/accent-walls"
+              className="bg-white p-6 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition"
+            >
+              <h3 className="text-xl font-bold mb-3">Accent Walls & Architectural Details</h3>
+              <p className="text-slate-600">
+                Custom feature walls, slat paneling, floating shelving, and finish carpentry that elevate your interior aesthetic.
               </p>
             </a>
           </div>
