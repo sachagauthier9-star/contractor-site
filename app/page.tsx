@@ -9,56 +9,56 @@ export default function Home() {
   return (
     <>
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
-        {/* Full-Width Branded Header Bar */}
-        <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
-          <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center relative">
-            {/* Logo + Brand Name */}
-            <div className="flex items-center gap-3">
-              <img
-                src="/1logo.png"
-                alt="White Pine Construction Ottawa Logo"
-                className="h-12 w-auto"
-              />
-              <span className="text-xl font-bold tracking-tight">
-                White Pine Construction Ottawa
-              </span>
-            </div>
+{/* Full-Width Branded Header Bar */}
+<header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative gap-2">
+    {/* Logo + Brand Name */}
+    <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+      <img
+        src="/1logo.png"
+        alt="White Pine Construction Ottawa Logo"
+        className="h-8 sm:h-12 w-auto shrink-0"
+      />
+      <span className="text-sm sm:text-xl font-bold tracking-tight truncate sm:whitespace-normal">
+        White Pine Construction Ottawa
+      </span>
+    </div>
 
-            {/* Header Contact Dropdown Button */}
-            <div className="relative">
-              <button
-                onClick={() => setShowContact(!showContact)}
-                className="bg-slate-800 hover:bg-slate-900 text-white font-semibold px-4 py-2 rounded-lg transition flex items-center gap-2 whitespace-nowrap"
-              >
-                <span>📞 Contact Us</span>
-                <span className="text-xs">{showContact ? "▲" : "▼"}</span>
-              </button>
+    {/* Header Contact Dropdown Button */}
+    <div className="relative shrink-0">
+      <button
+        onClick={() => setShowContact(!showContact)}
+        className="bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition flex items-center gap-1.5 whitespace-nowrap"
+      >
+        <span>📞 Contact Us</span>
+        <span className="text-[10px] sm:text-xs">{showContact ? "▲" : "▼"}</span>
+      </button>
 
-              {/* Dropdown Menu */}
-              {showContact && (
-                <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
-                  <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
-                    Direct Contact
-                  </span>
-                  
-                  <a
-                    href="tel:+16130000000"
-                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
-                  >
-                    <span>📞</span> (613) 000-0000
-                  </a>
+      {/* Dropdown Menu */}
+      {showContact && (
+        <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
+          <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
+            Direct Contact
+          </span>
+          
+          <a
+            href="tel:+16130000000"
+            className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
+          >
+            <span>📞</span> (613) 000-0000
+          </a>
 
-                  <a
-                    href="mailto:info@whitepineconstruction.ca"
-                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
-                  >
-                    <span>✉️</span> info@whitepineconstruction.ca
-                  </a>
-                </div>
-              )}
-            </div>
-          </div>
-        </header>
+          <a
+            href="mailto:info@whitepineconstruction.ca"
+            className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
+          >
+            <span>✉️</span> info@whitepineconstruction.ca
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</header>
 
         {/* Hero Section */}
         <section className="bg-slate-900 text-white py-24 px-6">
