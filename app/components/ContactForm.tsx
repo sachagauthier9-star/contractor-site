@@ -57,7 +57,7 @@ export default function ContactForm() {
           <option>Kitchen Renovation</option>
           <option>Bathroom Renovation</option>
           <option>Basement Finishing</option>
-          <option>Addition</option>
+          <option>Accent Walls</option>
           <option>General Contracting</option>
           <option>Other</option>
         </select>
