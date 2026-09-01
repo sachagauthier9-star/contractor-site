@@ -69,7 +69,7 @@ export default function Home() {
         <section className="relative bg-slate-900 text-white py-28 px-6 overflow-hidden">
           {/* Background Image */}
           <img
-            src="hero1.png"
+            src="/hero1.png"
             alt="Quality Renovation Showcase"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -111,7 +111,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="after3.png"
+                  src="/after3.png"
                   alt="Modern kitchen renovation with custom cabinets"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -139,7 +139,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
+                  src="/bathroom1.png"
                   alt="Custom bathroom walk-in tile shower and vanity"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -167,7 +167,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="accent1.png"
+                  src="/accent1.png"
                   alt="Custom slat wood accent wall and architectural trim"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
