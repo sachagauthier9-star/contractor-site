@@ -65,19 +65,28 @@ export default function Home() {
           </div>
         </header>
 
-        {/* Hero Section */}
-        <section className="bg-slate-900 text-white py-24 px-6">
-          <div className="max-w-4xl mx-auto text-center space-y-6">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+        {/* Hero Section with Full Background Image */}
+        <section className="relative bg-slate-900 text-white py-28 px-6 overflow-hidden">
+          {/* Background Image */}
+          <img
+            src="hero1.png"
+            alt="Quality Renovation Showcase"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+          {/* Dark Overlay for Text Readability */}
+          <div className="absolute inset-0 bg-slate-950/75" />
+
+          <div className="relative max-w-4xl mx-auto text-center space-y-6 z-10">
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">
               Quality Renovations & Contracting
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto drop-shadow">
               Kitchens, bathrooms, basements, and custom builds built with quality craftsmanship and reliable project management.
             </p>
             <div className="pt-4">
               <a
                 href="#contact"
-                className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block"
+                className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block shadow-lg"
               >
                 Request a Free Estimate
               </a>
@@ -102,7 +111,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="After3.png"
+                  src="after3.png"
                   alt="Modern kitchen renovation with custom cabinets"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -130,7 +139,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="bathroom3.png"
+                  src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800"
                   alt="Custom bathroom walk-in tile shower and vanity"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -158,7 +167,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="accent3.png"
+                  src="accent1.png"
                   alt="Custom slat wood accent wall and architectural trim"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -202,7 +211,7 @@ export default function Home() {
               Request a free estimate and we'll get back to you shortly.
             </p>
 
-<ContactForm />
+            <ContactForm />
           </div>
         </section>
       </main>
