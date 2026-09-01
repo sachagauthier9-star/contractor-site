@@ -69,7 +69,7 @@ export default function Home() {
         <section className="relative bg-slate-900 text-white py-28 px-6 overflow-hidden">
           {/* Background Image */}
           <img
-            src="/hero1.png"
+            src="/Hero1.png"
             alt="Quality Renovation Showcase"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -111,7 +111,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="/after3.png"
+                  src="/After3.png"
                   alt="Modern kitchen renovation with custom cabinets"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
