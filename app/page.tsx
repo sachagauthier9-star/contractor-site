@@ -5,6 +5,7 @@ import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   const [showContact, setShowContact] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <>
@@ -12,8 +13,9 @@ export default function Home() {
         {/* Full-Width Branded Header Bar */}
         <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex justify-between items-center relative gap-2">
+            
             {/* Logo + Brand Name */}
-            <div className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <a href="#" className="flex items-center gap-2 sm:gap-3 min-w-0">
               <img
                 src="/1logo.png"
                 alt="White Pine Construction Ottawa Logo"
@@ -27,42 +29,115 @@ export default function Home() {
                   Construction Ottawa
                 </span>
               </div>
-            </div>
+            </a>
 
-            {/* Header Contact Dropdown Button */}
-            <div className="relative shrink-0">
+            {/* Desktop Navigation Links */}
+            <nav className="hidden md:flex items-center gap-8 font-semibold text-slate-700 text-sm">
+              <a href="#" className="hover:text-slate-950 transition">Home</a>
+              <a href="#services" className="hover:text-slate-950 transition">Services</a>
+              <a href="#about" className="hover:text-slate-950 transition">About Us</a>
+            </nav>
+
+            {/* Header Right Actions */}
+            <div className="flex items-center gap-2 shrink-0">
+              {/* Header Contact Dropdown Button */}
+              <div className="relative">
+                <button
+                  onClick={() => {
+                    setShowContact(!showContact);
+                    setMobileMenuOpen(false);
+                  }}
+                  className="bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition flex items-center gap-1.5 whitespace-nowrap"
+                >
+                  <span>📞 Contact Us</span>
+                  <span className="text-[10px] sm:text-xs">{showContact ? "▲" : "▼"}</span>
+                </button>
+
+                {/* Dropdown Menu */}
+                {showContact && (
+                  <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
+                    <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
+                      Direct Contact
+                    </span>
+                    
+                    <a
+                      href="tel:+16130000000"
+                      className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
+                    >
+                      <span>📞</span> (613) 000-0000
+                    </a>
+
+                    <a
+                      href="mailto:info@whitepineconstruction.ca"
+                      className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
+                    >
+                      <span>✉️</span> info@whitepineconstruction.ca
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* Mobile Hamburger Toggle Button */}
               <button
-                onClick={() => setShowContact(!showContact)}
-                className="bg-slate-800 hover:bg-slate-900 text-white font-semibold text-xs sm:text-base px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg transition flex items-center gap-1.5 whitespace-nowrap"
+                onClick={() => {
+                  setMobileMenuOpen(!mobileMenuOpen);
+                  setShowContact(false);
+                }}
+                aria-label="Toggle Menu"
+                className="md:hidden p-2 text-slate-800 hover:bg-slate-300 rounded-lg transition"
               >
-                <span>📞 Contact Us</span>
-                <span className="text-[10px] sm:text-xs">{showContact ? "▲" : "▼"}</span>
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  {mobileMenuOpen ? (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  ) : (
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  )}
+                </svg>
               </button>
-
-              {/* Dropdown Menu */}
-              {showContact && (
-                <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
-                  <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
-                    Direct Contact
-                  </span>
-                  
-                  <a
-                    href="tel:+16130000000"
-                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
-                  >
-                    <span>📞</span> (613) 000-0000
-                  </a>
-
-                  <a
-                    href="mailto:info@whitepineconstruction.ca"
-                    className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
-                  >
-                    <span>✉️</span> info@whitepineconstruction.ca
-                  </a>
-                </div>
-              )}
             </div>
           </div>
+
+          {/* Mobile Navigation Dropdown Tray */}
+          {mobileMenuOpen && (
+            <div className="md:hidden bg-slate-100 border-t border-slate-300 px-6 py-4 flex flex-col gap-3 text-sm font-semibold text-slate-800">
+              <a
+                href="#"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 hover:text-[#15933a] transition"
+              >
+                Home
+              </a>
+              <a
+                href="#services"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 hover:text-[#15933a] transition"
+              >
+                Services
+              </a>
+              <a
+                href="#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="py-1 hover:text-[#15933a] transition"
+              >
+                About Us
+              </a>
+            </div>
+          )}
         </header>
 
         {/* Hero Section with Full Background Image */}
@@ -95,7 +170,7 @@ export default function Home() {
         </section>
 
         {/* Services Section with Visual Cards */}
-        <section className="py-20 px-6 max-w-6xl mx-auto">
+        <section id="services" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900">Our Services</h2>
             <p className="text-slate-600 mt-2">
@@ -190,6 +265,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* About Us Section */}
+        <section id="about" className="py-20 px-6 max-w-5xl mx-auto scroll-mt-16 border-t border-slate-200">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4">
+              <span className="text-[#15933a] font-bold text-sm tracking-wider uppercase">
+                About White Pine Construction
+              </span>
+              <h2 className="text-3xl font-bold text-slate-900">
+                Dedicated Craftsmanship & Local Expertise
+              </h2>
+              <p className="text-slate-600 leading-relaxed">
+                Based in Ottawa, White Pine Construction Ottawa Inc. specializes in high-quality residential renovations and custom builds. We take pride in delivering precise craftsmanship, clear communication, and dependable project management from concept to completion.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                Whether you are updating a kitchen, transforming a bathroom, or adding custom architectural details to your home, our focus is always on durable materials, transparent pricing, and completing your project on schedule.
+              </p>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-80">
+              <img
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+                alt="White Pine Construction craftsmanship"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
         {/* Why Choose Us */}
         <section className="bg-slate-200 py-16 px-6">
           <div className="max-w-4xl mx-auto text-center space-y-4">
@@ -201,7 +303,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
+        <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16">
           <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
             <h2 className="text-3xl font-bold text-center mb-2">
               Ready to start your project?
