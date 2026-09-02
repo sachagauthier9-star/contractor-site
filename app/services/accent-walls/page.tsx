@@ -1,36 +1,12 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Accent Walls & Architectural Details",
-  description:
-    "Custom wood slat feature walls, board and batten, decorative paneling, floating shelving, and finish carpentry in Ottawa.",
-  keywords: [
-    "Accent Walls Ottawa",
-    "Feature Wall Contractor Ottawa",
-    "Slat Wood Wall Ottawa",
-    "Board and Batten Ottawa",
-    "Custom Carpentry Ottawa",
-    "Architectural Details Ottawa",
-  ],
-  openGraph: {
-    title: "Accent Walls & Architectural Details | White Pine Construction Ottawa",
-    description:
-      "Transform your space with custom feature walls, wood slat paneling, and floating shelves built by Ottawa experts.",
-    url: "https://whitepineconstruction.ca/services/accent-walls",
-    type: "website",
-    images: [
-      {
-        url: "https://whitepineconstruction.ca/accent1.png",
-        width: 1200,
-        height: 630,
-        alt: "Custom Accent Wall Project",
-      },
-    ],
-  },
-};
+import { useState } from "react";
+import Link from "next/link";
+import ContactForm from "@/app/components/ContactForm";
 
 export default function AccentWallsPage() {
+  const [showEstimateForm, setShowEstimateForm] = useState(false);
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -56,62 +32,108 @@ export default function AccentWallsPage() {
           __html: JSON.stringify(serviceSchema),
         }}
       />
-      <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
+      <main className="min-h-screen bg-slate-50 text-slate-900 font-sans pb-20">
         {/* Hero Section */}
-        <section className="bg-slate-900 text-white py-20 px-6 relative">
-          {/* Back to Home Button aligned to far left */}
-          <div className="absolute top-6 left-6">
+        <section className="relative bg-slate-900 text-white py-20 px-6 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#15933a_1px,transparent_1px)] [background-size:16px_16px]" />
+
+          {/* Far Left Back Button */}
+          <div className="absolute top-6 left-6 z-20">
             <Link
               href="/"
-              className="inline-flex items-center text-white hover:text-slate-200 transition font-medium"
+              className="inline-flex items-center text-slate-300 hover:text-white transition-colors font-medium text-sm group"
             >
-              ← Back to Home
+              <span className="group-hover:-translate-x-1 transition-transform mr-1">←</span> Back to Home
             </Link>
           </div>
 
-          <div className="max-w-4xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl font-extrabold tracking-tight">
+          <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
+            <span className="text-[#15933a] font-bold text-xs uppercase tracking-widest bg-[#15933a]/10 px-3 py-1 rounded-full border border-[#15933a]/20 inline-block">
+              Ottawa Portfolio Showcase
+            </span>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-sm">
               Accent Walls & Architectural Details
             </h1>
-            <p className="text-lg text-slate-300 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-300 max-w-2xl mx-auto font-normal">
               Custom interior features designed to elevate your living space.
             </p>
           </div>
         </section>
 
-        {/* Image Gallery */}
-        <section className="px-6 max-w-6xl mx-auto pt-12">
-          <h2 className="text-2xl font-bold mb-6 text-center">
-            Featured Projects
-          </h2>
+        {/* Full-Width Main Section */}
+        <div className="w-full px-4 sm:px-8 max-w-[1400px] mx-auto -mt-6 relative z-20">
+          <div className="bg-white shadow-xl border border-slate-200/80 p-6 md:p-10 space-y-8">
+            
+            {/* Header Title */}
+            <div className="pb-6 border-b border-slate-100">
+              <span className="font-semibold text-slate-800 text-lg">
+                Featured Projects Showcase
+              </span>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <img
-              src="/accent1.png"
-              alt="Custom wood slat accent wall installation in Ottawa home"
-              className="w-full h-auto object-cover rounded-none"
-            />
-            <img
-              src="/accent2.png"
-              alt="Modern geometric feature wall carpentry project"
-              className="w-full h-auto object-cover rounded-none"
-            />
-            <img
-              src="/accent3.png"
-              alt="Custom architectural detail and floating shelf carpentry"
-              className="w-full h-auto object-cover rounded-none"
-            />
+            {/* Equal Height Desktop Image Gallery Grid */}
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="bg-slate-100 border border-slate-200 overflow-hidden">
+                <img
+                  src="/accent1.png"
+                  alt="Custom wood slat accent wall installation in Ottawa home"
+                  className="w-full h-80 md:h-[420px] object-cover rounded-none"
+                />
+              </div>
+              <div className="bg-slate-100 border border-slate-200 overflow-hidden">
+                <img
+                  src="/accent2.png"
+                  alt="Modern geometric feature wall carpentry project"
+                  className="w-full h-80 md:h-[420px] object-cover rounded-none"
+                />
+              </div>
+              <div className="bg-slate-100 border border-slate-200 overflow-hidden">
+                <img
+                  src="/accent3.png"
+                  alt="Custom architectural detail and floating shelf carpentry"
+                  className="w-full h-80 md:h-[420px] object-cover rounded-none"
+                />
+              </div>
+            </div>
+
+            {/* Main Narrative Description */}
+            <div className="bg-slate-900 text-white p-8 space-y-3 text-center">
+              <h3 className="text-xl font-bold text-white">Project Summary</h3>
+              <p className="text-slate-300 leading-relaxed max-w-3xl mx-auto text-sm md:text-base">
+                From custom slat wood feature walls and decorative paneling to floating shelving and finish carpentry, we build tailored architectural elements that add character, modern texture, and visual interest to any room.
+              </p>
+            </div>
+
+            {/* Call to Action with Inline Accordion Form */}
+            <div className="pt-4 text-center space-y-4">
+              <h4 className="text-lg font-bold text-slate-900">Planning a feature wall or carpentry project in Ottawa?</h4>
+              
+              <div>
+                <button
+                  onClick={() => setShowEstimateForm(!showEstimateForm)}
+                  className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3 text-base transition shadow-md cursor-pointer"
+                >
+                  {showEstimateForm ? "Hide Estimate Form" : "Request a Free Estimate"}
+                </button>
+              </div>
+
+              {/* Accordion Form Container */}
+              {showEstimateForm && (
+                <div className="mt-6 max-w-2xl mx-auto text-left bg-slate-50 p-6 md:p-8 border border-slate-200 shadow-inner transition-all duration-300">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">
+                    Request a Free Estimate
+                  </h3>
+                  <p className="text-sm text-slate-600 mb-6 text-center">
+                    Fill out the form below and we will get back to you shortly regarding your carpentry project.
+                  </p>
+                  <ContactForm />
+                </div>
+              )}
+            </div>
+
           </div>
-        </section>
-
-        {/* Project Description */}
-        <section className="pb-20 pt-10 px-6 max-w-3xl mx-auto text-center">
-          <p className="text-lg text-slate-700 leading-relaxed">
-            From custom slat wood feature walls and decorative paneling to floating 
-            shelving and finish carpentry, we build tailored architectural elements 
-            that add character, modern texture, and visual interest to any room.
-          </p>
-        </section>
+        </div>
       </main>
     </>
   );
