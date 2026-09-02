@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Accent Walls & Architectural Details",
@@ -57,7 +58,17 @@ export default function AccentWallsPage() {
       />
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         {/* Hero Section */}
-        <section className="bg-slate-900 text-white py-20 px-6">
+        <section className="bg-slate-900 text-white py-20 px-6 relative">
+          {/* Back to Home Button aligned to far left */}
+          <div className="absolute top-6 left-6">
+            <Link
+              href="/"
+              className="inline-flex items-center text-white hover:text-slate-200 transition font-medium"
+            >
+              ← Back to Home
+            </Link>
+          </div>
+
           <div className="max-w-4xl mx-auto text-center space-y-4">
             <h1 className="text-4xl font-extrabold tracking-tight">
               Accent Walls & Architectural Details
@@ -68,17 +79,8 @@ export default function AccentWallsPage() {
           </div>
         </section>
 
-        {/* Project Description */}
-        <section className="py-10 px-6 max-w-3xl mx-auto text-center">
-          <p className="text-lg text-slate-700 leading-relaxed">
-            From custom slat wood feature walls and decorative paneling to floating 
-            shelving and finish carpentry, we build tailored architectural elements 
-            that add character, modern texture, and visual interest to any room.
-          </p>
-        </section>
-
         {/* Image Gallery */}
-        <section className="px-6 max-w-6xl mx-auto pb-20">
+        <section className="px-6 max-w-6xl mx-auto pt-12">
           <h2 className="text-2xl font-bold mb-6 text-center">
             Featured Projects
           </h2>
@@ -87,19 +89,28 @@ export default function AccentWallsPage() {
             <img
               src="/accent1.png"
               alt="Custom wood slat accent wall installation in Ottawa home"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-none"
             />
             <img
               src="/accent2.png"
               alt="Modern geometric feature wall carpentry project"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-none"
             />
             <img
               src="/accent3.png"
               alt="Custom architectural detail and floating shelf carpentry"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover rounded-none"
             />
           </div>
+        </section>
+
+        {/* Project Description */}
+        <section className="pb-20 pt-10 px-6 max-w-3xl mx-auto text-center">
+          <p className="text-lg text-slate-700 leading-relaxed">
+            From custom slat wood feature walls and decorative paneling to floating 
+            shelving and finish carpentry, we build tailored architectural elements 
+            that add character, modern texture, and visual interest to any room.
+          </p>
         </section>
       </main>
     </>
