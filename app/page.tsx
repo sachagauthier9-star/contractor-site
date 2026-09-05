@@ -24,13 +24,16 @@ export default function Home() {
             <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto drop-shadow">
               Kitchens, bathrooms, basements, and custom builds built with quality craftsmanship and reliable project management.
             </p>
-            <div className="pt-4">
+            <div className="pt-4 space-y-2">
               <a
                 href="#contact"
                 className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-6 py-3 rounded-lg text-lg transition inline-block shadow-lg"
               >
                 Request a Free Estimate
               </a>
+              <p className="text-sm font-medium text-slate-300 tracking-wide uppercase">
+                Fully Licensed & Insured
+              </p>
             </div>
           </div>
         </section>
@@ -175,8 +178,12 @@ export default function Home() {
               Ready to start your project?
             </h2>
 
-            <p className="text-center text-slate-600 mb-8">
+            <p className="text-center text-slate-600 mb-2">
               Request a free estimate and we'll get back to you shortly.
+            </p>
+
+            <p className="text-center text-sm font-semibold text-[#15933a] mb-8">
+              100% Free, No-Obligation Quotes
             </p>
 
             <ContactForm />
