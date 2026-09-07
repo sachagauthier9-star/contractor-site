@@ -203,7 +203,7 @@ export default function Home() {
         <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16">
           <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
             <h2 className="text-3xl font-bold text-center mb-2">
-              Ready to dicuss your project?
+              Ready to discuss your project?
             </h2>
 
             <p className="text-center text-slate-600 mb-2">
