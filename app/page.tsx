@@ -22,7 +22,7 @@ export default function Home() {
               Quality Renovations & Contracting
             </h1>
             <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto drop-shadow">
-              Kitchens, bathrooms, basements, and custom builds built with quality craftsmanship and reliable project management.
+              Quality craftsmanship and reliable project management for custom kitchens, bathrooms, and basements.
             </p>
             <div className="pt-4 space-y-2">
               <a
@@ -39,7 +39,7 @@ export default function Home() {
         </section>
 
         {/* Services Section with Visual Cards */}
-        <section id="services" className="py-20 px-6 max-w-6xl mx-auto scroll-mt-16">
+        <section id="services" className="py-20 px-6 max-w-7xl mx-auto scroll-mt-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900">Our Services</h2>
             <p className="text-slate-600 mt-2">
@@ -47,7 +47,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Kitchen Renovations */}
             <a
               href="/services/kitchens"
@@ -67,7 +67,7 @@ export default function Home() {
                     Kitchen Renovations
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Full kitchen remodels including custom cabinetry, countertops, tile backsplashes, and modern functional layouts.
+                    Full kitchen remodels from personalized layouts to the last paint stroke. Custom cabinetry, modern appliances, and functional design for your dream kitchen.
                   </p>
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
@@ -95,7 +95,7 @@ export default function Home() {
                     Bathroom Upgrades
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Custom tile work, walk-in glass showers, modern vanity installations, and complete bathroom overhauls.
+                    Full bathroom remodel from personalized layouts to the last paint stroke. Premium tile work, walk-in showers, bathtub replacements, and vanity/cabinetry installation for your dream bathroom.
                   </p>
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
@@ -123,11 +123,39 @@ export default function Home() {
                     Accent Walls & Details
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    Custom feature walls, slat paneling, floating shelving, and finish carpentry that elevate your interior aesthetic.
+                    Custom feature walls, slat paneling, floating shelving, and carpentry finishes that elevate your interior aesthetic.
                   </p>
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
                   Explore Feature Walls <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </a>
+
+            {/* General Contracting & Home Repairs */}
+            <a
+              href="/services/contracting"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                <img
+                  src="/Hero1.png"
+                  alt="General contracting, home repairs, and troubleshooting"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
+              </div>
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#15933a] transition-colors">
+                    General Contracting & Repairs
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Versatile contracting services and custom home repairs. Dedicated to problem solving, maintenance tasks, and home repair needs.
+                  </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
+                  Explore Repairs & Services <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
             </a>
@@ -145,7 +173,7 @@ export default function Home() {
                 Dedicated Craftsmanship & Local Expertise
               </h2>
               <p className="text-slate-600 leading-relaxed">
-                Based in Ottawa, White Pine Construction Ottawa Inc. specializes in high-quality residential renovations and custom builds. We take pride in delivering precise craftsmanship, clear communication, and dependable project management from concept to completion.
+                Based in Ottawa, White Pine Construction Ottawa Inc. specializes in high-quality residential renovations. We take pride in delivering precise craftsmanship, clear communication, and dependable project management from concept to completion.
               </p>
               <p className="text-slate-600 leading-relaxed">
                 Whether you are updating a kitchen, transforming a bathroom, or adding custom architectural details to your home, our focus is always on durable materials, transparent pricing, and completing your project on schedule.
