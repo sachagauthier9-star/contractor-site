@@ -38,6 +38,9 @@ export default function Header() {
           <Link href="/#about" className="hover:text-slate-950 transition">
             About Us
           </Link>
+          <Link href="/#faq" className="hover:text-slate-950 transition">
+            FAQ
+          </Link>
         </nav>
 
         {/* Header Right Actions */}
@@ -72,10 +75,10 @@ export default function Header() {
                 </a>
 
                 <a
-                  href="mailto:info@whitepineconstruction.ca"
+                  href="mailto:sacha@whitepineconstruction.ca"
                   className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
                 >
-                  <span>✉️</span> info@whitepineconstruction.ca
+                  <span>✉️</span> sacha@whitepineconstruction.ca
                 </a>
               </div>
             )}
@@ -139,6 +142,13 @@ export default function Header() {
             className="py-1 hover:text-[#15933a] transition"
           >
             About Us
+          </Link>
+          <Link
+            href="/#faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-1 hover:text-[#15933a] transition"
+          >
+            FAQ
           </Link>
         </div>
       )}

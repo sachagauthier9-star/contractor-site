@@ -1,8 +1,74 @@
 "use client";
 
+import { useState } from "react";
 import ContactForm from "./components/ContactForm";
 
+const faqs = [
+  {
+    question: "How much does a bathroom renovation cost in Ottawa?",
+    answer:
+      "Bathroom renovation costs in Ottawa vary based on the size of the space, materials selected, and the scope of work. On average, a full bathroom remodel can range from $10,000 to $25,000 or more. We provide detailed estimates after an on-site consultation to ensure accurate pricing for your specific project.",
+  },
+  {
+    question: "How much does a kitchen renovation cost in Ottawa?",
+    answer:
+      "In Ottawa, a full kitchen renovation typically ranges from $35,000 to $100,000+, depending on the size of the room, layout changes, and finish selections. We provide a detailed estimate after an on-site consultation to ensure accurate pricing for your specific project.",
+  },
+  {
+    question: "How do I get an estimate for my renovation project?",
+    answer:
+      "You can request a free estimate by filling out our contact form below or reaching out directly via phone or email. We will schedule a site consultation to evaluate your space, discuss your goals, and provide a detailed quote.",
+  },
+  {
+    question: "Are you licensed and insured?",
+    answer:
+      "Yes, White Pine Construction Ottawa is fully licensed and carries comprehensive liability insurance to ensure complete peace of mind throughout every stage of your project.",
+  },
+  {
+    question: "What areas do you serve?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          We provide residential interior renovations and general contracting services across the Greater Ottawa Area and surrounding eastern communities. Our core service areas include:
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            <strong>East Ottawa &amp; Regional:</strong> Orléans, Gloucester, Rockland, Cumberland, Navan, Limoges, and Embrun
+          </li>
+          <li>
+            <strong>Central &amp; Urban Ottawa:</strong> The Glebe, Westboro, Alta Vista, Rockcliffe Park, and Old Ottawa South
+          </li>
+          <li>
+            <strong>Suburban Ottawa:</strong> Kanata, Barrhaven, Stittsville, Riverside South, Greely, and Manotick
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "How long does a typical kitchen or bathroom renovation take?",
+    answer:
+      "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks, while full kitchen remodels typically take 3 to 5 weeks. We establish a clear timeline prior to starting work.",
+  },
+  {
+    question: "Do I need to supply my own materials?",
+    answer:
+      "We handle all framing, structural, trade, and building supplies. For finishing fixtures like tile, vanity units, faucets, or lighting, you can select and purchase them directly, or work with us to source premium trade materials.",
+  },
+  {
+    question: "How do you handle changes during the project?",
+    answer:
+      "If you choose to alter the scope of work during construction, we provide a written change order outlining any adjustments to time or cost before proceeding, ensuring total pricing transparency.",
+  },
+];
+
 export default function Home() {
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
   return (
     <>
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
@@ -199,6 +265,50 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Frequently Asked Questions Section */}
+        <section id="faq" className="py-20 px-6 max-w-4xl mx-auto scroll-mt-16">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900">Frequently Asked Questions</h2>
+            <p className="text-slate-600 mt-2">
+              Everything you need to know about our renovation process.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-slate-200 overflow-hidden transition-all duration-200 shadow-sm"
+              >
+                <button
+                  onClick={() => toggleFaq(index)}
+                  className="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors"
+                >
+                  <span className="text-lg">{faq.question}</span>
+                  <span className="text-[#15933a] text-xl font-semibold">
+                    {openFaq === index ? "−" : "+"}
+                  </span>
+                </button>
+                {openFaq === index && (
+                  <div className="px-6 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                    {faq.answer}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Have any more questions callout banner */}
+          <div className="mt-12 text-center bg-slate-100 p-6 rounded-xl border border-slate-200">
+            <p className="text-lg font-bold text-slate-800">
+              Have any more questions?
+            </p>
+            <p className="text-slate-600 mt-1">
+              Don't hesitate to fill out the form below and we'll get back to you directly.
+            </p>
+          </div>
+        </section>
+
         {/* Contact Section */}
         <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16">
           <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
@@ -207,7 +317,7 @@ export default function Home() {
             </h2>
 
             <p className="text-center text-slate-600 mb-2">
-              Request a free estimate and we'll get back to you shortly.
+              Request a free estimate or ask us any questions using the form below.
             </p>
 
             <p className="text-center text-sm font-semibold text-[#15933a] mb-8">
