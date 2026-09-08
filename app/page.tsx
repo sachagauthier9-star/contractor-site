@@ -21,8 +21,8 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">
               Quality Renovations & Contracting
             </h1>
-            <p className="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto drop-shadow">
-              Quality craftsmanship and reliable project management for custom kitchens, bathrooms, and basements.
+            <p className="text-lg md:text-xl text-slate-180 max-w-2xl mx-auto drop-shadow">
+              Bringing quality, precision, and reliable management to your home renovation.
             </p>
             <div className="pt-4 space-y-2">
               <a
@@ -139,7 +139,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="/Hero1.png"
+                  src="/Contracting3.png"
                   alt="General contracting, home repairs, and troubleshooting"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

@@ -76,21 +76,21 @@ export default function GeneralContractingPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-slate-100 border border-slate-200 overflow-hidden">
                 <img
-                  src="/Hero1.png"
+                  src="/Contracting1.png"
                   alt="General contracting and carpentry repairs in Ottawa"
                   className="w-full h-80 md:h-[420px] object-cover rounded-none"
                 />
               </div>
               <div className="bg-slate-100 border border-slate-200 overflow-hidden">
                 <img
-                  src="/about1.png"
+                  src="/Contracting2.png"
                   alt="Structural updates and home repairs"
                   className="w-full h-80 md:h-[420px] object-cover rounded-none"
                 />
               </div>
               <div className="bg-slate-100 border border-slate-200 overflow-hidden">
                 <img
-                  src="/accent1.png"
+                  src="/Contracting3.png"
                   alt="Custom fixes, trim, and home maintenance"
                   className="w-full h-80 md:h-[420px] object-cover rounded-none"
                 />
