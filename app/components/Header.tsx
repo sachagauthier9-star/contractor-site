@@ -68,10 +68,10 @@ export default function Header() {
                 </span>
 
                 <a
-                  href="tel:+16130000000"
+                  href="tel:+16138676044"
                   className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
                 >
-                  <span>📞</span> (613) 000-0000
+                  <span>📞</span> (613) 867-6044
                 </a>
 
                 <a
