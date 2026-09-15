@@ -62,6 +62,78 @@ const faqs = [
   },
 ];
 
+// Plain text versions specifically formatted for Google Search Structured Data (JSON-LD)
+const faqSchemaData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How much does a bathroom renovation cost in Ottawa?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Bathroom renovation costs in Ottawa vary based on the size of the space, materials selected, and the scope of work. On average, a full bathroom remodel can range from $10,000 to $25,000 or more. We provide detailed estimates after an on-site consultation to ensure accurate pricing for your specific project.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How much does a kitchen renovation cost in Ottawa?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "In Ottawa, a full kitchen renovation typically ranges from $35,000 to $100,000+, depending on the size of the room, layout changes, and finish selections. We provide a detailed estimate after an on-site consultation to ensure accurate pricing for your specific project.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do I get an estimate for my renovation project?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can request a free estimate by filling out our contact form below or reaching out directly via phone or email. We will schedule a site consultation to evaluate your space, discuss your goals, and provide a detailed quote.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Are you licensed and insured?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, White Pine Construction Ottawa is fully licensed and carries comprehensive liability insurance to ensure complete peace of mind throughout every stage of your project.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What areas do you serve?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We provide residential interior renovations and general contracting services across the Greater Ottawa Area and surrounding eastern communities including Orléans, Gloucester, Rockland, Cumberland, Navan, Limoges, Embrun, The Glebe, Westboro, Alta Vista, Rockcliffe Park, Old Ottawa South, Kanata, Barrhaven, Stittsville, Riverside South, Greely, and Manotick.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does a typical kitchen or bathroom renovation take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks, while full kitchen remodels typically take 4 to 8 weeks. We establish a clear timeline prior to starting work.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do I need to supply my own materials?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We handle all framing, structural, trade, and building supplies, as well as finishing fixtures like tiles, vanities, faucets, and lighting. We source high-quality trade materials for every stage of your project to ensure a seamless, hassle-free process from start to finish.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do you handle changes during the project?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "If you choose to alter the scope of work during construction, we provide a written change order outlining any adjustments to time or cost before proceeding, ensuring total pricing transparency.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -71,6 +143,12 @@ export default function Home() {
 
   return (
     <>
+      {/* FAQ Schema Markup for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
+      />
+
       <main className="min-h-screen bg-slate-50 text-slate-900 font-sans">
         {/* Hero Section with Full Background Image */}
         <section className="relative bg-slate-900 text-white py-28 px-6 overflow-hidden">
