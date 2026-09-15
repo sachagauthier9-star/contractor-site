@@ -62,21 +62,21 @@ export default function Header() {
 
             {/* Dropdown Menu */}
             {showContact && (
-              <div className="absolute top-full right-0 mt-2 w-64 bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
+              <div className="absolute top-full right-0 mt-2 w-max min-w-[16rem] bg-white border border-slate-200 rounded-xl shadow-xl p-4 text-slate-800 flex flex-col gap-3 text-sm z-50">
                 <span className="font-bold border-b border-slate-100 pb-2 text-slate-900">
                   Direct Contact
                 </span>
 
                 <a
                   href="tel:+16138676044"
-                  className="flex items-center gap-2 font-medium hover:text-[#15933a] transition"
+                  className="flex items-center gap-2 font-medium hover:text-[#15933a] transition whitespace-nowrap"
                 >
                   <span>📞</span> (613) 867-6044
                 </a>
 
                 <a
                   href="mailto:sacha@whitepineconstruction.ca"
-                  className="flex items-center gap-2 font-medium hover:text-[#15933a] transition break-all"
+                  className="flex items-center gap-2 font-medium hover:text-[#15933a] transition whitespace-nowrap"
                 >
                   <span>✉️</span> sacha@whitepineconstruction.ca
                 </a>
