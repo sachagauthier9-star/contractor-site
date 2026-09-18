@@ -192,7 +192,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Kitchen Renovations */}
+            {/* TEMPORARILY HIDDEN: Kitchen Renovations */}
+            {/* 
             <a
               href="/services/kitchens"
               className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col"
@@ -216,6 +217,35 @@ export default function Home() {
                 </div>
                 <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
                   Explore Kitchens <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </div>
+            </a>
+            */}
+
+            {/* Interior & Exterior Painting */}
+            <a
+              href="/services/painting"
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                <img
+                  src="/After3.png"
+                  alt="Professional interior and exterior painting services"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
+              </div>
+              <div className="p-6 flex flex-col justify-between flex-1">
+                <div>
+                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#15933a] transition-colors">
+                    Interior & Exterior Painting
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    Professional residential painting services including wall preparation, drywall repair, trim finishing, and durable exterior coatings to revitalize your home.
+                  </p>
+                </div>
+                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
+                  Explore Painting <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
                 </div>
               </div>
             </a>
