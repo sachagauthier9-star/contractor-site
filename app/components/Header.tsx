@@ -75,10 +75,10 @@ export default function Header() {
                 </a>
 
                 <a
-                  href="mailto:sacha@whitepineconstruction.ca"
+                  href="mailto:info@whitepineconstruction.ca"
                   className="flex items-center gap-2 font-medium hover:text-[#15933a] transition whitespace-nowrap"
                 >
-                  <span>✉️</span> sacha@whitepineconstruction.ca
+                  <span>✉️</span> info@whitepineconstruction.ca
                 </a>
               </div>
             )}
