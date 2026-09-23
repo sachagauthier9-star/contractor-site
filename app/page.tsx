@@ -229,7 +229,7 @@ export default function Home() {
             >
               <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                 <img
-                  src="/After3.png"
+                  src="/Painting2.jpg"
                   alt="Professional interior and exterior painting services"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
