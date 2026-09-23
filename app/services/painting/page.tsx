@@ -7,7 +7,7 @@ import ContactForm from "@/app/components/ContactForm";
 
 // Array of images for the slider
 const sliderImages = [
-  "/about1.png",
+  "/Painting1.png",
   "/After3.png",
   "/Hero1.png",
 ];
@@ -40,12 +40,16 @@ export default function PaintingPage() {
       <section className="relative bg-slate-900 text-white py-24 px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/Hero1.png"
+            src="/Painting2.jpg"
             alt="Professional painting service showcase"
             fill
             priority
-            className="object-cover opacity-30"
+            quality={75}
+            sizes="100vw"
+            className="object-cover opacity-100"
           />
+          {/* Subtle overlay to ensure clear image visibility while keeping text readable */}
+          <div className="absolute inset-0 bg-slate-950/40" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center space-y-6 z-10">
           <span className="text-[#15933a] font-bold text-sm tracking-wider uppercase bg-slate-950/60 px-4 py-1.5 rounded-full border border-[#15933a]/30 inline-block">
@@ -101,6 +105,7 @@ export default function PaintingPage() {
                 src={src}
                 alt={`Painting service showcase ${index + 1}`}
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className={`object-cover transition-opacity duration-1000 ${
                   index === currentImageIndex ? "opacity-100 z-0" : "opacity-0 -z-10"
                 }`}
