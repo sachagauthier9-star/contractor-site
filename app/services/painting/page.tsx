@@ -7,13 +7,16 @@ import ContactForm from "@/app/components/ContactForm";
 
 // Array of images for the slider
 const sliderImages = [
-  "/Painting1.png",
-  "/After3.png",
-  "/Hero1.png",
+  "/Paint1.JPG",
+  "/Paint2.JPG",
+  "/Paint3.JPG",
+  "/Paint4.JPG",
+  "/Paint5.JPG", 
 ];
 
 export default function PaintingPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showEstimateForm, setShowEstimateForm] = useState(false);
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
@@ -52,9 +55,6 @@ export default function PaintingPage() {
           <div className="absolute inset-0 bg-slate-950/40" />
         </div>
         <div className="relative max-w-4xl mx-auto text-center space-y-6 z-10">
-          <span className="text-[#15933a] font-bold text-sm tracking-wider uppercase bg-slate-950/60 px-4 py-1.5 rounded-full border border-[#15933a]/30 inline-block">
-            Residential Painting Services
-          </span>
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight drop-shadow-md">
             Interior &amp; Exterior Painting in Ottawa
           </h1>
@@ -62,12 +62,12 @@ export default function PaintingPage() {
             Transform your spaces with meticulous surface prep, premium materials, and flawless finishes delivered by experienced local trades.
           </p>
           <div className="pt-4">
-            <a
-              href="#contact"
-              className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3.5 rounded-lg text-lg transition inline-block shadow-lg"
+            <button
+              onClick={() => setShowEstimateForm(!showEstimateForm)}
+              className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3.5 rounded-lg text-lg transition inline-block shadow-lg cursor-pointer"
             >
-              Request a Free Painting Quote
-            </a>
+              {showEstimateForm ? "Hide Estimate Form" : "Request a Free Painting Quote"}
+            </button>
           </div>
         </div>
       </section>
@@ -189,21 +189,39 @@ export default function PaintingPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16">
-        <div className="bg-white p-8 rounded-xl shadow-md border border-slate-200">
-          <h2 className="text-3xl font-bold text-center mb-2">
-            Ready to Paint Your Space?
-          </h2>
-          <p className="text-center text-slate-600 mb-2">
-            Request a free estimate or discuss your colour ideas with us.
-          </p>
-          <p className="text-center text-sm font-semibold text-[#15933a] mb-8">
-            100% Free, No-Obligation Quotes
-          </p>
+      {/* Call to Action with Inline Accordion Contact Form */}
+      <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16 text-center space-y-4">
+        <h2 className="text-3xl font-bold text-slate-900">
+          Ready to Paint Your Space?
+        </h2>
+        <p className="text-slate-600 max-w-xl mx-auto">
+          Request a free estimate or discuss your colour ideas with us.
+        </p>
 
-          <ContactForm />
+        <div>
+          <button
+            onClick={() => setShowEstimateForm(!showEstimateForm)}
+            className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3 text-base transition shadow-md cursor-pointer"
+          >
+            {showEstimateForm ? "Hide Estimate Form" : "Request a Free Estimate"}
+          </button>
         </div>
+
+        {/* Accordion Form Container */}
+        {showEstimateForm && (
+          <div className="mt-6 max-w-2xl mx-auto text-left bg-white p-6 md:p-8 rounded-xl border border-slate-200 shadow-lg transition-all duration-300">
+            <h3 className="text-xl font-bold text-slate-900 mb-2 text-center">
+              Tell Us About Your Painting Project
+            </h3>
+            <p className="text-sm text-slate-600 mb-2 text-center">
+              Describe your project below and we will get back to you shortly with a free quote.
+            </p>
+            <p className="text-center text-sm font-semibold text-[#15933a] mb-6">
+              100% Free, No-Obligation Quotes
+            </p>
+            <ContactForm />
+          </div>
+        )}
       </section>
     </main>
   );

@@ -49,9 +49,6 @@ export default function BathroomsPage() {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
-            <span className="text-[#15933a] font-bold text-xs uppercase tracking-widest bg-[#15933a]/10 px-3 py-1 rounded-full border border-[#15933a]/20 inline-block">
-              Ottawa Portfolio Showcase
-            </span>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-sm">
               Bathroom Upgrades & Renovations
             </h1>

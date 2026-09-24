@@ -1,7 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import ContactForm from "./components/ContactForm";
+
+// Array of images for the About Us slider
+const aboutImages = [
+  "/about1.png",
+  "/Paint1.JPG",
+  "/Paint2.jpg",
+];
 
 const faqs = [
   {
@@ -136,10 +144,30 @@ const faqSchemaData = {
 
 export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [currentAboutImageIndex, setCurrentAboutImageIndex] = useState(0);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
+
+  const nextAboutImage = () => {
+    setCurrentAboutImageIndex((prevIndex) => (prevIndex + 1) % aboutImages.length);
+  };
+
+  const prevAboutImage = () => {
+    setCurrentAboutImageIndex((prevIndex) =>
+      prevIndex === 0 ? aboutImages.length - 1 : prevIndex - 1
+    );
+  };
+
+  // Switch image automatically every 6 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextAboutImage();
+    }, 6000);
+
+    return () => clearInterval(timer);
+  }, [currentAboutImageIndex]);
 
   return (
     <>
@@ -192,36 +220,6 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* TEMPORARILY HIDDEN: Kitchen Renovations */}
-            {/* 
-            <a
-              href="/services/kitchens"
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all duration-300 flex flex-col"
-            >
-              <div className="relative h-48 w-full overflow-hidden bg-slate-100">
-                <img
-                  src="/After3.png"
-                  alt="Modern kitchen renovation with custom cabinets"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
-              </div>
-              <div className="p-6 flex flex-col justify-between flex-1">
-                <div>
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#15933a] transition-colors">
-                    Kitchen Renovations
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    Full kitchen remodels from personalized layouts to the last paint stroke. Custom cabinetry, modern appliances, and functional design for your dream kitchen.
-                  </p>
-                </div>
-                <div className="mt-4 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-[#15933a]">
-                  Explore Kitchens <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>
-                </div>
-              </div>
-            </a>
-            */}
-
             {/* Interior & Exterior Painting */}
             <a
               href="/services/painting"
@@ -336,7 +334,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Us Section */}
+        {/* About Us Section with Image Slider */}
         <section id="about" className="py-20 px-6 max-w-5xl mx-auto scroll-mt-16 border-t border-slate-200">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-4">
@@ -353,12 +351,56 @@ export default function Home() {
                 Whether you are updating a kitchen, transforming a bathroom, or adding custom architectural details to your home, our focus is always on durable materials, transparent pricing, and completing your project on schedule.
               </p>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-80">
-              <img
-                src="/about1.png"
-                alt="White Pine Construction craftsmanship"
-                className="w-full h-full object-cover"
-              />
+
+            {/* Interactive Image Slider Container */}
+            <div className="relative rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-80 group">
+              {/* Image Slides */}
+              {aboutImages.map((src, index) => (
+                <Image
+                  key={src}
+                  src={src}
+                  alt={`White Pine Construction craftsmanship ${index + 1}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className={`object-cover transition-opacity duration-1000 ${
+                    index === currentAboutImageIndex ? "opacity-100 z-0" : "opacity-0 -z-10"
+                  }`}
+                />
+              ))}
+
+              {/* Left Navigation Arrow */}
+              <button
+                onClick={prevAboutImage}
+                aria-label="Previous Image"
+                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-slate-950/50 hover:bg-[#15933a] text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md backdrop-blur-sm cursor-pointer"
+              >
+                ‹
+              </button>
+
+              {/* Right Navigation Arrow */}
+              <button
+                onClick={nextAboutImage}
+                aria-label="Next Image"
+                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-slate-950/50 hover:bg-[#15933a] text-white w-10 h-10 rounded-full flex items-center justify-center transition-colors shadow-md backdrop-blur-sm cursor-pointer"
+              >
+                ›
+              </button>
+
+              {/* Slide Indicators Dots */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
+                {aboutImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentAboutImageIndex(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                    className={`w-2.5 h-2.5 rounded-full transition-all cursor-pointer ${
+                      index === currentAboutImageIndex
+                        ? "bg-[#15933a] w-6"
+                        : "bg-white/60 hover:bg-white"
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -390,7 +432,7 @@ export default function Home() {
               >
                 <button
                   onClick={() => toggleFaq(index)}
-                  className="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors"
+                  className="w-full px-6 py-5 text-left font-bold text-slate-900 flex justify-between items-center gap-4 hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <span className="text-lg">{faq.question}</span>
                   <span className="text-[#15933a] text-xl font-semibold">

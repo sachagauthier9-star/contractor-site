@@ -49,9 +49,6 @@ export default function GeneralContractingPage() {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto text-center space-y-4">
-            <span className="text-[#15933a] font-bold text-xs uppercase tracking-widest bg-[#15933a]/10 px-3 py-1 rounded-full border border-[#15933a]/20 inline-block">
-              Ottawa Contracting & Repair Services
-            </span>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight drop-shadow-sm">
               General Contracting & Home Problem Solving
             </h1>
@@ -114,7 +111,7 @@ export default function GeneralContractingPage() {
                   onClick={() => setShowEstimateForm(!showEstimateForm)}
                   className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3 text-base transition shadow-md cursor-pointer"
                 >
-                  {showEstimateForm ? "Hide Estimate Form" : "Get Help With Your Project"}
+                  {showEstimateForm ? "Hide Estimate Form" : "Request a Free Estimate"}
                 </button>
               </div>
 
