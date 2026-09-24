@@ -8,7 +8,7 @@ import ContactForm from "./components/ContactForm";
 const aboutImages = [
   "/about1.png",
   "/Paint1.JPG",
-  "/Paint2.jpg",
+  "/Paint2.JPG",
 ];
 
 const faqs = [
