@@ -5,18 +5,98 @@ import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/app/components/ContactForm";
 
-// Array of images for the slider
+// Array of images with descriptions and area information for the slider
 const sliderImages = [
-  "/Paint1.JPG",
-  "/Paint2.JPG",
-  "/Paint3.JPG",
-  "/Paint4.JPG",
-  "/Paint5.JPG", 
+  {
+    src: "/Paint1.JPG",
+    title: "Interior Living Space Refresh",
+    description: "Precision wall prep, smooth coat finishing, and custom trim painting.",
+    area: "Orléans / Navan",
+  },
+  {
+    src: "/Paint2.JPG",
+    title: "Full Bathroom Painting",
+    description: "Drywall patching, stain blocking, and low-VOC durable interior paint.",
+    area: "Rockland / Cumberland",
+  },
+  {
+    src: "/Paint3.JPG",
+    title: "Full Bathroom Painting",
+    description: "Drywall patching, stain blocking, and low-VOC durable interior paint.",
+    area: "Rockland / Cumberland",
+  },
+  {
+    src: "/Paint4.JPG",
+    title: "Full Bathroom Painting",
+    description: "Drywall patching, stain blocking, and low-VOC durable interior paint.",
+    area: "Rockland / Cumberland",
+  },
+  {
+    src: "/Paint5.JPG",
+    title: "Interior Living Space Refresh",
+    description: "Precision wall prep, smooth coat finishing, and custom trim painting.",
+    area: "Orléans / Navan",
+  },
+];
+
+// Painting specific FAQs
+const paintingFaqs = [
+   {
+    question: "What areas do you serve?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          We provide residential interior renovations and general contracting services across the Greater Ottawa Area and surrounding eastern communities. Our core service areas include:
+        </p>
+        <ul className="list-disc pl-5 space-y-1">
+          <li>
+            <strong>East Ottawa &amp; Regional:</strong> Orléans, Gloucester, Rockland, Cumberland, Navan, Limoges, and Embrun
+          </li>
+          <li>
+            <strong>Central &amp; Urban Ottawa:</strong> The Glebe, Westboro, Alta Vista, Rockcliffe Park, and Old Ottawa South
+          </li>
+          <li>
+            <strong>Suburban Ottawa:</strong> Kanata, Barrhaven, Stittsville, Riverside South, Greely, and Manotick
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
+    question: "Do I need to supply the paint, or do you provide it?",
+    answer:
+      "We typically supply premium-grade paints from trusted brands like Benjamin Moore and Sherwin-Williams as part of our quote. However, if you already have specific paint purchased, we are happy to work with your materials.",
+  },
+  {
+    question: "How do you handle surface preparation before painting?",
+    answer:
+      "Surface prep is our highest priority. We fill nail holes, repair drywall cracks, sand rough surfaces smooth, apply stain-blocking primer where needed, and caulk trim/baseboards to ensure a flawless, long-lasting finish.",
+  },
+  {
+    question: "How long does a typical interior painting project take?",
+    answer:
+      "Most single-room or small residential painting projects are completed in 1 to 2 days. Full-home interior painting usually takes 3 to 5 days, depending on drywall repair needs, trim complexity, and square footage.",
+  },
+  {
+    question: "Do you move furniture and cover floors?",
+    answer:
+      "Yes! We protect your home as if it were our own. We move light furniture away from walls, cover flooring with drop cloths, and shield furniture and fixtures with plastic sheeting before opening any paint.",
+  },
+  {
+    question: "What type of paint do you use for exterior painting in Ottawa?",
+    answer:
+      "We use high-durability, weather-resistant exterior acrylics designed specifically to endure Ottawa's extreme seasonal shifts—from hot summers to frozen winters—without peeling or fading prematurely.",
+  },
 ];
 
 export default function PaintingPage() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [showEstimateForm, setShowEstimateForm] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
@@ -99,17 +179,35 @@ export default function PaintingPage() {
           {/* Interactive Image Slider Container */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200 h-96 group">
             {/* Image Slides */}
-            {sliderImages.map((src, index) => (
-              <Image
-                key={src}
-                src={src}
-                alt={`Painting service showcase ${index + 1}`}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className={`object-cover transition-opacity duration-1000 ${
+            {sliderImages.map((slide, index) => (
+              <div
+                key={slide.src}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
                   index === currentImageIndex ? "opacity-100 z-0" : "opacity-0 -z-10"
                 }`}
-              />
+              >
+                <Image
+                  src={slide.src}
+                  alt={`Painting project - ${slide.title}`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                
+                {/* Image Overlay Banner with Dark Capsule Location Badge */}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/60 to-transparent p-5 pb-10 text-white z-10">
+                  <div className="inline-flex items-center gap-1.5 bg-slate-900/90 text-white font-medium text-xs px-3 py-1 rounded-md shadow border border-slate-700/60 mb-2 backdrop-blur-sm">
+                    <span className="text-[#15933a] font-bold">📍</span>
+                    <span>{slide.area}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white drop-shadow">
+                    {slide.title}
+                  </h3>
+                  <p className="text-xs text-slate-200 line-clamp-2 drop-shadow-sm mt-0.5">
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
             ))}
 
             {/* Left Navigation Arrow */}
@@ -188,6 +286,41 @@ export default function PaintingPage() {
           </div>
         </div>
       </section>
+      {/* Frequently Asked Questions Section */}
+      <section className="py-20 px-6 max-w-4xl mx-auto border-b border-slate-200">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-slate-900">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-slate-600 mt-2 max-w-xl mx-auto">
+            Got questions about our painting process? Here are answers to what clients ask us most.
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          {paintingFaqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl border border-slate-200 overflow-hidden transition-shadow shadow-sm hover:shadow-md"
+            >
+              <button
+                onClick={() => toggleFaq(index)}
+                className="w-full text-left p-5 font-semibold text-slate-900 flex justify-between items-center gap-4 cursor-pointer focus:outline-none"
+              >
+                <span>{faq.question}</span>
+                <span className="text-[#15933a] font-bold text-xl leading-none">
+                  {openFaqIndex === index ? "−" : "+"}
+                </span>
+              </button>
+              {openFaqIndex === index && (
+                <div className="px-5 pb-5 text-slate-600 text-sm leading-relaxed border-t border-slate-100 pt-3">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
 
       {/* Call to Action with Inline Accordion Contact Form */}
       <section id="contact" className="py-20 px-6 max-w-3xl mx-auto scroll-mt-16 text-center space-y-4">
@@ -201,7 +334,7 @@ export default function PaintingPage() {
         <div>
           <button
             onClick={() => setShowEstimateForm(!showEstimateForm)}
-            className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3 text-base transition shadow-md cursor-pointer"
+            className="bg-[#15933a] hover:bg-[#1fd655] text-slate-950 font-bold px-8 py-3 text-base transition shadow-md cursor-pointer rounded-lg"
           >
             {showEstimateForm ? "Hide Estimate Form" : "Request a Free Estimate"}
           </button>
