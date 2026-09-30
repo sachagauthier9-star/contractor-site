@@ -7,11 +7,11 @@ import ContactForm from "@/app/components/ContactForm";
 
 // Array of images for the slider
 const sliderImages = [
-  { src: "/accent1.png", alt: "Custom wood slat feature wall and TV media wall installation in Ottawa" },
-  { src: "/accent3.png", alt: "Custom architectural detail, electric fireplace surround, and floating shelves" },
   { src: "/Media1.jpg", alt: "Custom media wall with recessed TV mount and acoustic wood slat paneling" },
   { src: "/Media 2.jpg", alt: "Custom board and batten accent wall with floating shelves and trim work" },
   { src: "/Media 3.jpg", alt: "Custom media wall with electric fireplace framing and hidden cable management" },
+  { src: "/accent1.png", alt: "Custom wood slat feature wall and TV media wall installation in Ottawa" },
+  { src: "/accent3.png", alt: "Custom architectural detail, electric fireplace surround, and floating shelves" },
 ];
 
 // Media Walls, Accent Walls & Carpentry specific FAQs

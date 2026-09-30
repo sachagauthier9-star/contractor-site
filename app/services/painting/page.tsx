@@ -264,7 +264,7 @@ export default function PaintingPage() {
               <div className="text-[#15933a] text-2xl font-bold">01</div>
               <h3 className="text-xl font-bold text-slate-900">Interior Walls &amp; Ceilings</h3>
               <p className="text-slate-600 text-sm leading-relaxed">
-                Full room painting, accent walls, high-ceiling painting, drywall patching, stain blocking, and smooth coat finishes using low-VOC premium paints.
+                Full room painting, accent walls, high-ceiling painting, drywall patching, stain blocking, and smooth coat finishes using premium paints.
               </p>
             </div>
 
