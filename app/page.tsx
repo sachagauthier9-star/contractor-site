@@ -18,11 +18,6 @@ const faqs = [
       "Bathroom renovation costs in Ottawa vary based on the size of the space, materials selected, and the scope of work. On average, a full bathroom remodel can range from $10,000 to $25,000 or more. We provide detailed estimates after an on-site consultation to ensure accurate pricing for your specific project.",
   },
   {
-    question: "How much does a kitchen renovation cost in Ottawa?",
-    answer:
-      "In Ottawa, a full kitchen renovation typically ranges from $35,000 to $100,000+, depending on the size of the room, layout changes, and finish selections. We provide a detailed estimate after an on-site consultation to ensure accurate pricing for your specific project.",
-  },
-  {
     question: "How do I get an estimate for my renovation project?",
     answer:
       "You can request a free estimate by filling out our contact form below or reaching out directly via phone or email. We will schedule a site consultation to evaluate your space, discuss your goals, and provide a detailed quote.",
