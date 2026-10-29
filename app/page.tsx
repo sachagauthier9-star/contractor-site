@@ -49,9 +49,9 @@ const faqs = [
     ),
   },
   {
-    question: "How long does a typical kitchen or bathroom renovation take?",
+    question: "How long does a typical bathroom renovation take?",
     answer:
-      "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks, while full kitchen remodels typically take 4 to 8 weeks. We establish a clear timeline prior to starting work.",
+      "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks. We establish a clear timeline prior to starting work.",
   },
   {
     question: "Do I need to supply my own materials?",
@@ -112,10 +112,10 @@ const faqSchemaData = {
     },
     {
       "@type": "Question",
-      name: "How long does a typical kitchen or bathroom renovation take?",
+      name: "How long does a typical bathroom renovation take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks, while full kitchen remodels typically take 4 to 8 weeks. We establish a clear timeline prior to starting work.",
+        text: "Timelines vary based on scope, custom materials, and square footage. A standard bathroom update generally takes 1 to 2 weeks. We establish a clear timeline prior to starting work.",
       },
     },
     {
