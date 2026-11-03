@@ -15,9 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.whitepineconstruction.ca"),
   title: {
     default: "White Pine Construction Ottawa | Renovations & Contracting",
-    template: "%s | White Pine Construction Ottawa",
+    template: "%s | White Pine Construction",
   },
   description:
     "Professional renovations in Ottawa including kitchens, bathrooms, basements, accent walls, and custom builds.",
@@ -36,13 +37,13 @@ export const metadata: Metadata = {
     title: "White Pine Construction Ottawa | Renovations & Contracting",
     description:
       "Quality renovations and custom contracting in Ottawa. Specializing in kitchens, bathrooms, basements, and architectural details.",
-    url: "https://whitepineconstruction.ca",
+    url: "https://www.whitepineconstruction.ca",
     siteName: "White Pine Construction Ottawa",
     locale: "en_CA",
     type: "website",
     images: [
       {
-        url: "https://whitepineconstruction.ca/1logo.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "White Pine Construction Ottawa Logo",
@@ -64,9 +65,9 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     name: "White Pine Construction Ottawa Inc.",
-    image: "https://whitepineconstruction.ca/1logo.png",
-    url: "https://whitepineconstruction.ca",
-    telephone: "+1-613-000-0000",
+    image: "https://www.whitepineconstruction.ca/og-image.png",
+    url: "https://www.whitepineconstruction.ca",
+    telephone: "+1-613-867-6044",
     email: "info@whitepineconstruction.ca",
     address: {
       "@type": "PostalAddress",
