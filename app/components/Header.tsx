@@ -1,11 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 export default function Header() {
   const [showContact, setShowContact] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  // Close the contact dropdown when clicking/tapping anywhere outside it, or pressing Escape
+  useEffect(() => {
+    if (!showContact) return;
+
+    const handlePointerDown = (e: PointerEvent) => {
+      if (contactRef.current && !contactRef.current.contains(e.target as Node)) {
+        setShowContact(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowContact(false);
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showContact]);
 
   return (
     <header className="sticky top-0 z-50 bg-slate-200 text-slate-900 border-b border-slate-300 w-full font-sans">
@@ -46,7 +68,7 @@ export default function Header() {
         {/* Header Right Actions */}
         <div className="flex items-center gap-2 shrink-0">
           {/* Header Contact Dropdown Button */}
-          <div className="relative">
+          <div className="relative" ref={contactRef}>
             <button
               onClick={() => {
                 setShowContact(!showContact);
