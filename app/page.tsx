@@ -6,6 +6,7 @@ import ContactForm from "./components/ContactForm";
 
 // Array of images for the About Us slider
 const aboutImages = [
+  "/about-owner.jpg",
   "/about1.png",
   "/Paint1.JPG",
   "/Paint2.JPG",
